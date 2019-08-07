@@ -135,3 +135,7 @@ contactPhone.textContent = siteContent["contact"]["phone"];
 
 const contactEmail = document.querySelector(".contact p:nth-child(4)");
 contactEmail.textContent = siteContent["contact"]["email"];
+
+//// update the footer section ////
+const footerParagraph = document.querySelector("footer p");
+footerParagraph.textContent = siteContent["footer"]["copyright"];
