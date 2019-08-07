@@ -51,8 +51,9 @@ let linkNumber = 0;
 
 for (let i = 1; i < 7; i++) {
   linkNumber = i;
-  const navigation = document.querySelector(`a:nth-child(${linkNumber})`);
+  const navigation = document.querySelector(`nav a:nth-child(${linkNumber})`);
   navigation.textContent = siteContent["nav"][`nav-item-${linkNumber}`];
+  navigation.style.color = "green";
 }
 
 //// update the cta section ////
@@ -139,3 +140,16 @@ contactEmail.textContent = siteContent["contact"]["email"];
 //// update the footer section ////
 const footerParagraph = document.querySelector("footer p");
 footerParagraph.textContent = siteContent["footer"]["copyright"];
+
+//// add new nav links ////
+const navigationLinkTeam = document.createElement("a");
+navigationLinkTeam.textContent = "Our Team";
+navigationLinkTeam.style.color = "green";
+
+const navigationLinkTerms = document.createElement("a");
+navigationLinkTerms.textContent = "Terms";
+navigationLinkTerms.style.color = "green";
+
+const navLinks = document.querySelector("nav");
+navLinks.appendChild(navigationLinkTeam);
+navLinks.appendChild(navigationLinkTerms);
