@@ -54,3 +54,13 @@ for (let i = 1; i < 7; i++) {
   const navigation = document.querySelector(`a:nth-child(${linkNumber})`);
   navigation.textContent = siteContent["nav"][`nav-item-${linkNumber}`];
 }
+
+// update the cta section
+const ctaHeader = document.querySelector(".cta-text h1");
+ctaHeader.textContent = siteContent["cta"]["h1"];
+
+const ctaButton = document.querySelector(".cta-text button");
+ctaButton.textContent = siteContent["cta"]["button"];
+
+const ctaImage = document.querySelector(".cta img");
+ctaImage.setAttribute("src", siteContent["cta"]["img-src"]);
