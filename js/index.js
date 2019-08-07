@@ -122,3 +122,16 @@ const visionParagraph = document.querySelector(
   ".bottom-content .text-content:nth-child(3) p"
 );
 visionParagraph.textContent = siteContent["main-content"]["vision-content"];
+
+//// update the contact section ////
+const contactHeader = document.querySelector(".contact h4");
+contactHeader.textContent = siteContent["contact"]["contact-h4"];
+
+const contactAddress = document.querySelector(".contact p:nth-child(2)");
+contactAddress.textContent = siteContent["contact"]["address"];
+
+const contactPhone = document.querySelector(".contact p:nth-child(3)");
+contactPhone.textContent = siteContent["contact"]["phone"];
+
+const contactEmail = document.querySelector(".contact p:nth-child(4)");
+contactEmail.textContent = siteContent["contact"]["email"];
