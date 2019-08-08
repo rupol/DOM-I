@@ -153,3 +153,5 @@ navigationLinkTerms.style.color = "green";
 const navLinks = document.querySelector("nav");
 navLinks.appendChild(navigationLinkTeam);
 navLinks.appendChild(navigationLinkTerms);
+
+//// stretch goals ////
