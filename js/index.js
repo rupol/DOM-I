@@ -42,6 +42,11 @@ const siteContent = {
   }
 };
 
+function changeColor(elem, colorChoice) {
+  // makes a given element a specified color - color must be in quotes
+  return (elem.style.color = colorChoice);
+}
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
@@ -53,7 +58,7 @@ for (let i = 1; i < 7; i++) {
   linkNumber = i;
   const navigation = document.querySelector(`nav a:nth-child(${linkNumber})`);
   navigation.textContent = siteContent["nav"][`nav-item-${linkNumber}`];
-  navigation.style.color = "green";
+  changeColor(navigation, "green");
 }
 
 //// update the cta section ////
@@ -144,14 +149,31 @@ footerParagraph.textContent = siteContent["footer"]["copyright"];
 //// add new nav links ////
 const navigationLinkTeam = document.createElement("a");
 navigationLinkTeam.textContent = "Our Team";
-navigationLinkTeam.style.color = "green";
+changeColor(navigationLinkTeam, "green");
 
 const navigationLinkTerms = document.createElement("a");
 navigationLinkTerms.textContent = "Terms";
-navigationLinkTerms.style.color = "green";
+changeColor(navigationLinkTerms, "green");
 
 const navLinks = document.querySelector("nav");
 navLinks.appendChild(navigationLinkTeam);
 navLinks.appendChild(navigationLinkTerms);
 
-//// stretch goals ////
+//// stretch goals - dark mode ////
+const body = document.querySelector("body");
+body.style.background = "black";
+changeColor(body, "white");
+logo.style.filter = "invert(100%)";
+
+ctaButton.style.background = "black";
+changeColor(ctaButton, "white");
+ctaButton.style.border = "1px double white";
+
+const subHeaders = document.querySelectorAll("h4");
+for (i = 0; i < subHeaders.length; i++) {
+  changeColor(subHeaders[i], "green");
+}
+
+const mainContent = document.querySelector(".main-content");
+mainContent.style.borderTop = "2px solid white";
+mainContent.style.borderBottom = "2px solid white";
