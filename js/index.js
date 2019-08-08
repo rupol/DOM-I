@@ -190,7 +190,7 @@ function darkMode() {
     ctaButton.style.background = "white";
     changeColor(ctaButton, "black");
     ctaButton.style.border = "1px double black";
-    ctaButton.textContent = "Disable Dark Mode";
+    ctaButton.textContent = "Enable Dark Mode";
 
     const subHeaders = document.querySelectorAll("h4");
     for (i = 0; i < subHeaders.length; i++) {
