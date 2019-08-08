@@ -10,7 +10,7 @@ const siteContent = {
   },
   cta: {
     h1: "DOM Is Awesome",
-    button: "Get Started",
+    button: "Enable Dark Mode",
     "img-src": "img/header-img.png"
   },
   "main-content": {
@@ -161,19 +161,44 @@ navLinks.appendChild(navigationLinkTerms);
 
 //// stretch goals - dark mode ////
 const body = document.querySelector("body");
-body.style.background = "black";
-changeColor(body, "white");
-logo.style.filter = "invert(100%)";
+body.style.background = "white";
 
-ctaButton.style.background = "black";
-changeColor(ctaButton, "white");
-ctaButton.style.border = "1px double white";
+function darkMode() {
+  if (body.style.background === "white") {
+    body.style.background = "black";
+    changeColor(body, "white");
+    logo.style.filter = "invert(100%)";
 
-const subHeaders = document.querySelectorAll("h4");
-for (i = 0; i < subHeaders.length; i++) {
-  changeColor(subHeaders[i], "green");
+    ctaButton.style.background = "black";
+    changeColor(ctaButton, "white");
+    ctaButton.style.border = "1px double white";
+    ctaButton.textContent = "Disable Dark Mode";
+
+    const subHeaders = document.querySelectorAll("h4");
+    for (i = 0; i < subHeaders.length; i++) {
+      changeColor(subHeaders[i], "green");
+    }
+
+    const mainContent = document.querySelector(".main-content");
+    mainContent.style.borderTop = "2px solid white";
+    mainContent.style.borderBottom = "2px solid white";
+  } else if (body.style.background === "black") {
+    body.style.background = "white";
+    changeColor(body, "black");
+    logo.style.filter = "invert(0%)";
+
+    ctaButton.style.background = "white";
+    changeColor(ctaButton, "black");
+    ctaButton.style.border = "1px double black";
+    ctaButton.textContent = "Disable Dark Mode";
+
+    const subHeaders = document.querySelectorAll("h4");
+    for (i = 0; i < subHeaders.length; i++) {
+      changeColor(subHeaders[i], "black");
+    }
+
+    const mainContent = document.querySelector(".main-content");
+    mainContent.style.borderTop = "2px solid black";
+    mainContent.style.borderBottom = "2px solid black";
+  }
 }
-
-const mainContent = document.querySelector(".main-content");
-mainContent.style.borderTop = "2px solid white";
-mainContent.style.borderBottom = "2px solid white";
